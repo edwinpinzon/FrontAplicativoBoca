@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - BOCA Mejorado</title>
+  <link rel="stylesheet" href="/Assets/css/FormularioPrincipalEstilos.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Panel de Administración - BOCA</h1>
+  </header>
+
+  <main class="main">
+    <section class="card-section">
+      <div class="card">
+        <h2>Usuarios</h2>
+        <p>Gestionar jueces, concursantes y personal.</p>
+        <a href="2 - FormularioCrearUsuarios.html" class="btn">Ir a usuarios</a>
+      </div>
+      <div class="card">
+        <h2>Competencias</h2>
+        <p>Crear y administrar competencias de programación.</p>
+        <a href="3 - FormularioCrearCompetencia.html" class="btn">Ver competencias</a>
+      </div>
+      <div class="card">
+        <h2>Problemas</h2>
+        <p>Agregar, editar o eliminar problemas.</p>
+        <a href="4 - FormularioGestionProblemas.html" class="btn">Ver problemas</a>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <div class="table-header">
+        <h3>Próximas competencias</h3>
+        <button id="nuevaCompetencia" class="btn">+ Nueva Competencia</button>
+      </div>
+      <div class="table-container">
+        <table id="tablaCompetencias">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Duración</th>
+              <th>Ubicación</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Las filas se generarán dinámicamente con JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de edición -->
+  <div id="modalEdicion" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h2>Editar Competencia</h2>
+      
+      <div class="form-group">
+        <label for="editNombre">Nombre:</label>
+        <input type="text" id="editNombre" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="editFecha">Fecha:</label>
+        <input type="date" id="editFecha" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="editHora">Hora:</label>
+        <input type="time" id="editHora" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="editDuracion">Duración (minutos):</label>
+        <input type="number" id="editDuracion" class="form-control" min="1">
+      </div>
+      
+      <div class="form-group">
+        <label for="editDescripcion">Ubicación/Descripción:</label>
+        <textarea id="editDescripcion" class="form-control" rows="3"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="editEstado">Estado:</label>
+        <select id="editEstado" class="form-control">
+          <option value="Programada">Programada</option>
+          <option value="Activa">Activa</option>
+          <option value="Finalizada">Finalizada</option>
+          <option value="Cancelada">Cancelada</option>
+        </select>
+      </div>
+      
+      <div class="modal-footer">
+        <button id="cancelarEdicion" class="btn gris">Cancelar</button>
+        <button id="guardarCambios" class="btn">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de eliminación -->
+  <div id="modalEliminar" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h2>Confirmar Eliminación</h2>
+      <p>¿Estás seguro que deseas eliminar esta competencia?</p>
+      <div class="modal-footer">
+        <button id="cancelarEliminar" class="btn gris">Cancelar</button>
+        <button id="confirmarEliminar" class="btn rojo">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de éxito -->
+  <div id="modalExito" class="modal oculto">
+    <div class="modal-contenido">
+      <div class="mensaje-exito">
+        <span class="emoji">✅</span>
+        <span id="mensajeExitoTexto">Operación realizada con éxito</span>
+      </div>
+      <div class="modal-footer">
+        <button id="cerrarExito" class="btn">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/paginaPrincipal.js"></script>
+</body>
+</html>

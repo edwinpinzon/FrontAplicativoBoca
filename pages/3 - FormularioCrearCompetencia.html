@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear Competencia - BOCA Mejorado</title>
+  <link rel="stylesheet" href="/Assets/css/CrearCompetenciaEstilos.css" />
+</head>
+<body>
+  <div class="contenedor-principal">
+    <div class="contenedor-formulario">
+      <h2>Crear Competencia</h2>
+
+      <form id="formCompetencia" class="formulario">
+        <!-- Nombre y código -->
+        <div class="fila">
+          <div class="campo">
+            <label for="nombre">Nombre de la competencia</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Competencia Regional 2025" required />
+          </div>
+          <div class="campo">
+            <label for="codigo">Código</label>
+            <input id="codigo" name="codigo" type="text" placeholder="REG2025" required />
+          </div>
+        </div>
+
+        <!-- Fecha y hora -->
+        <div class="fila">
+          <div class="campo">
+            <label for="fecha">Fecha de inicio</label>
+            <input id="fecha" name="fecha" type="date" required />
+          </div>
+          <div class="campo">
+            <label for="hora">Hora de inicio</label>
+            <input id="hora" name="hora" type="time" required />
+          </div>
+        </div>
+
+        <!-- Duración -->
+        <div class="campo">
+          <label for="duracion">Duración (en minutos)</label>
+          <input id="duracion" name="duracion" type="number" min="1" placeholder="180" required />
+        </div>
+
+        <!-- Descripción -->
+        <div class="campo">
+          <label for="descripcion">Ubicación/Descripción</label>
+          <textarea id="descripcion" name="descripcion" rows="3" placeholder="Descripción de la competencia..."></textarea>
+        </div>
+
+        <!-- Estado -->
+        <div class="campo">
+          <label for="estado">Estado inicial</label>
+          <select id="estado" name="estado" required>
+            <option value="Programada">Programada</option>
+            <option value="Activa">Activa</option>
+          </select>
+        </div>
+
+        <!-- Botones -->
+        <div class="botones-formulario">
+          <a href="/pages/1 - FormularioPrincipal.html" class="btn volver">Cancelar</a>
+          <button type="submit" class="btn guardar">Guardar Competencia</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/competencias.js"></script>
+</body>
+</html>

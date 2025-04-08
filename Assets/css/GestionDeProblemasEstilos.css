@@ -1,0 +1,285 @@
+body.body-bg {
+  background-color: #f3f4f6;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1.5rem;
+}
+
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.encabezado {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.titulo {
+  color: #1D2C5E;
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.btn-volver {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #6b7280;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+  background-color: #4b5563;
+}
+
+.subtitulo-seccion {
+  font-size: 1.2rem;
+  color: #1D2C5E;
+  margin-bottom: 1rem;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.input, .textarea {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #4A90E2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.textarea {
+  grid-column: span 2;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario-boton {
+  grid-column: span 2;
+  text-align: right;
+}
+
+.boton {
+  background-color: #4A90E2;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.boton:hover {
+  background-color: #3C78C7;
+  transform: translateY(-2px);
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabla th, .tabla td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla thead {
+  background-color: #1D2C5E;
+  color: #fff;
+}
+
+.tabla tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.accion {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.editar {
+  color: #1D4ED8;
+}
+
+.editar:hover {
+  background-color: #e0e7ff;
+}
+
+.eliminar {
+  color: #DC2626;
+}
+
+.eliminar:hover {
+  background-color: #fee2e2;
+}
+
+/* Modales */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform: translateY(-20px);
+  transition: all 0.3s;
+}
+
+.modal.visible .modal-contenido {
+  transform: translateY(0);
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6C757D;
+}
+
+.cerrar-modal:hover {
+  color: #495057;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #80BDFF;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn.gris {
+  background-color: #6C757D;
+  color: white;
+}
+
+.btn.gris:hover {
+  background-color: #5a6268;
+}
+
+.btn.rojo {
+  background-color: #DC3545;
+  color: white;
+}
+
+.btn.rojo:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+  
+  .textarea, .formulario-boton {
+    grid-column: span 1;
+  }
+  
+  .contenedor {
+    padding: 1rem;
+  }
+}

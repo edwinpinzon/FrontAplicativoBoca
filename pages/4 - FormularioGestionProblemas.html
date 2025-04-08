@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión de Problemas - BOCA</title>
+  <link rel="stylesheet" href="/Assets/css/GestionDeProblemasEstilos.css" />
+</head>
+<body class="body-bg">
+  <div class="contenedor">
+    <header class="encabezado">
+      <h1 class="titulo">Gestión de Problemas</h1>
+      <p class="subtitulo">Agrega, edita o elimina problemas para competencias.</p>
+      <a href="/pages/1 - FormularioPrincipal.html" class="btn-volver">← Volver al panel principal</a>
+    </header>
+
+    <section class="seccion">
+      <h2 class="subtitulo-seccion">Agregar nuevo problema</h2>
+      <form id="formProblema" class="formulario">
+        <input type="text" id="titulo" placeholder="Título del problema" class="input" required />
+        <input type="text" id="categoria" placeholder="Categoría" class="input" required />
+        <textarea id="descripcion" placeholder="Descripción" rows="4" class="textarea"></textarea>
+        <input type="number" id="tiempoLimite" placeholder="Tiempo límite (ms)" class="input" min="100" required />
+        <input type="number" id="memoriaLimite" placeholder="Memoria límite (MB)" class="input" min="1" required />
+        <div class="formulario-boton">
+          <button type="submit" class="boton">Agregar problema</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <h2 class="subtitulo-seccion">Lista de problemas existentes</h2>
+      <div class="table-container">
+        <table id="tablaProblemas" class="tabla">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Categoría</th>
+              <th>Tiempo límite (ms)</th>
+              <th>Memoria (MB)</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Las filas se generarán dinámicamente con JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal de edición -->
+  <div id="modalEdicion" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h2>Editar Problema</h2>
+      
+      <div class="form-group">
+        <label for="editTitulo">Título:</label>
+        <input type="text" id="editTitulo" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="editCategoria">Categoría:</label>
+        <input type="text" id="editCategoria" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="editDescripcion">Descripción:</label>
+        <textarea id="editDescripcion" class="form-control" rows="3"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="editTiempo">Tiempo límite (ms):</label>
+        <input type="number" id="editTiempo" class="form-control" min="100">
+      </div>
+      
+      <div class="form-group">
+        <label for="editMemoria">Memoria límite (MB):</label>
+        <input type="number" id="editMemoria" class="form-control" min="1">
+      </div>
+      
+      <div class="modal-footer">
+        <button id="cancelarEdicion" class="btn gris">Cancelar</button>
+        <button id="guardarCambios" class="btn">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de eliminación -->
+  <div id="modalEliminar" class="modal oculto">
+    <div class="modal-contenido">
+      <span class="cerrar-modal">&times;</span>
+      <h2>Confirmar Eliminación</h2>
+      <p>¿Estás seguro que deseas eliminar este problema?</p>
+      <div class="modal-footer">
+        <button id="cancelarEliminar" class="btn gris">Cancelar</button>
+        <button id="confirmarEliminar" class="btn rojo">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/js/problemas.js"></script>
+</body>
+</html>
