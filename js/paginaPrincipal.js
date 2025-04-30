@@ -63,7 +63,8 @@ $(document).ready(function() {
   
   // Evento para abrir modal de nueva competencia
   $('#nuevaCompetencia').click(function() {
-    window.location.href = './pages/3 - FormularioCrearCompetencia.html';
+    window.location.href = '/pages/formulario_Crear_Competencia.html';
+    alert("Funciona")
   });
   
   // Evento para editar competencia
