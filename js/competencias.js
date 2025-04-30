@@ -42,6 +42,6 @@ $(document).ready(function() {
     localStorage.setItem('competencias', JSON.stringify(competencias));
     
     // Redirigir a la página principal
-    window.location.href ='index.html';
+    window.location.href =window.location.href = '/FrontAplicativoBoca/index.html';;
   });
 });
